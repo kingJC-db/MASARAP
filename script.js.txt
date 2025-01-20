@@ -1,0 +1,24 @@
+function searchInformation() {
+    const searchInput = document.getElementById("search-input").value.trim();
+    const resultsDiv = document.getElementById("results");
+
+    if (searchInput === "") {
+        resultsDiv.innerHTML = "<p>Please enter a keyword to search.</p>";
+        return;
+    }
+
+    // Example data or fetch function to replace this.
+    const mockData = {
+        "import": "The act of bringing goods or services into a country from abroad.",
+        "export": "The act of sending goods or services to another country for sale.",
+        "logistics": "The detailed organization of a complex operation involving many people, facilities, or supplies.",
+    };
+
+    const result = mockData[searchInput.toLowerCase()];
+
+    if (result) {
+        resultsDiv.innerHTML = <p><strong>${searchInput}:</strong> ${result}</p>;
+    } else {
+        resultsDiv.innerHTML = "<p>No information found for your search. Try another keyword.</p>";
+    }
+}
